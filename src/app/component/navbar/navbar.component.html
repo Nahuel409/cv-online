@@ -1,0 +1,63 @@
+<header id="welcome-section">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Mi sitio web</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Inicio</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              iniciar sesion
+            </button>
+          </li>
+            <button type="submit" class="btn btn-secondary" (click)="logOut()">Cerrar</button>
+        </ul>
+      </div>
+    </nav>
+
+  
+    
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Inicio de Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm" (ngSubmit)="login()" #loginForm="ngForm">
+              <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" required
+                  [(ngModel)]="username" name="username" pattern="^[a-zA-Z@]+$">
+                <div id="usernameHelp" class="form-text">Ingresa tu nombre de usuario (solo letras y @).</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" required
+                  [(ngModel)]="password" name="password" pattern="^[a-zA-Z]+$">
+                <div id="passwordHelp" class="form-text">Ingresa tu contraseña (solo letras).</div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" form="loginForm" (click)="login()" data-bs-dismiss="modal">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    
+
+
+  </header>
+ 
