@@ -1,25 +1,29 @@
 
-<div *ngIf="info">
-  <header id="welcome-section">
-    <img class="banner" src="assets/banner.jpg" width="100%" heigth="250px" alt="Url Invalida Se utilizo una Portada por Defecto">
-  </header>
-  <section class="informacion">
-      <div class="descripcion">
-          <img src="{{info.fotoPerfil}}" height="160px" width="100px" alt="Url Invalida"
-              class="fotoPerfil">
-          <div class="descripcion__info">
-              <h2>{{info.nombre}} {{info.apellido}}</h2>
-              <button  *ngIf="authService.isLoggedIn" id="boton-oculto" class="btn btn-primary Edit"
-              (click)="onOpenModal('edit', info)" data-bs-toggle="modal" data-bs-target="#editInfoModal">
-             Editar Perfil <!-- click edit -->
-              </button>
-             <h5>{{info.titulo}}</h5>
-              <h6 class="location"><i class="fa-solid fa-location-dot"></i>{{info.ubicacion}}</h6>
-          </div>
+  <div class="container"  *ngIf="info">
+    <div class="row">
+      <div class="col">
+        <h1>{{info.nombre}} {{info.apellido}}</h1>
+        <p>{{info.titulo}}</p>
       </div>
-      <div class="aboutMe"><p>{{info.descripcion}}</p></div>
-      
-   </section> 
+      <div class="col">
+        <ul>
+          <li>{{info.email}}</li>
+          <li>{{info.telefono}}</li>
+          <li>{{info.ubicacion}}</li>
+          <li>{{info.paginaweb}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>Perfil</h2>
+        <p>{{info.descripcion}}</p>
+      </div>
+    </div>
+    <button  *ngIf="authService.isLoggedIn" id="boton-oculto" class="btn btn-primary Edit"
+    (click)="onOpenModal('edit', info)" data-bs-toggle="modal" data-bs-target="#editInfoModal">
+   Editar Perfil 
+    </button>
   </div>
 
 <!-- MODAL EDITAR -->
@@ -95,10 +99,10 @@
             />
           </div>
           <div class="form-group">
-            <label for="fotoPerfil">URL de foto perfil</label>
+            <label for="fotoPerfil">URL de Web, Linkdin o Github</label>
             <input
               type="text"
-              ngModel="{{ info?.fotoPerfil }}"
+              ngModel="{{ info?.paginaweb }}"
               name="fotoPerfil"
               class="form-control"
               id="fotoPerfil"
@@ -106,14 +110,37 @@
             />
           </div>
           <div class="form-group">
-            <label for="ubicacion">URL de foto Portada</label>
+            <label for="ubicacion">Domicilio</label>
             <input
               type="text"
               ngModel="{{ info?.ubicacion }}"
               name="ubicacion"
               class="form-control"
               id="ubicacion"
-              placeholder="URL de la imagen"
+              placeholder="Ubicacion"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ubicacion">Email</label>
+            <input
+              type="text"
+              ngModel="{{ info?.email }}"
+              name="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="ubicacion">Telefono</label>
+            <input
+              type="text"
+              ngModel="{{ info?.telefono }}"
+              name="telefono"
+              class="form-control"
+              id="telefono"
+              placeholder="Telefono"
             />
           </div>
 

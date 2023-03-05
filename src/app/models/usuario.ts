@@ -5,5 +5,7 @@ export interface Usuario{
     titulo:string;
     descripcion:string;
     ubicacion:string;
-    fotoPerfil:string;
+    email:string;
+    telefono:string;
+    paginaweb:string;
 }

@@ -34,7 +34,7 @@
           </button> 
           </div>
       <div class="row" *ngFor="let experiencia of experiencias">
-        <div class="col-md-6 border-0">
+        <div class="col-md-12 border-0">
           <div class="card mb-4 border-0">
             <div class="card-body border-0">
               <h5 class="card-title">{{experiencia.tituloExp}}</h5>
@@ -42,8 +42,8 @@
               <p class="card-text"><small class="text-muted">{{experiencia.fechaExp}}</small></p>
             </div>
             <div class="card-footer" *ngIf="autenticacionService.isLoggedIn">
-              <button class="btn btn-outline-primary me-2">Editar</button>
-              <button class="btn btn-outline-danger">Eliminar</button>
+              <button class="btn btn-outline-primary me-2" (click)="onOpenModal('edit',experiencia)">Editar</button>
+              <button class="btn btn-outline-danger" (click)="onOpenModal('delete', experiencia)" >Eliminar</button>
             </div>
           </div>
         </div>
@@ -95,14 +95,14 @@ aria-hidden="true"
         </div>
 
         <div class="form-group">
-          <label for="imgExp">URL de la imagen</label>
+          <label for="fechaExp">Fecha De Experiencia</label>
           <input
             type="text"
             ngModel
-            name="imgExp"
+            name="fechaExp"
             class="form-control"
-            id=" imgExp"
-            placeholder="URL de la imagen"
+            id=" fechaExp"
+            placeholder="ejemplo 2022-2022, 06/22 - 07/23"
             required
           />
         </div>
@@ -179,14 +179,14 @@ aria-hidden="true"
           />
         </div>
         <div class="form-group">
-          <label for="imgExp">URL de imagen</label>
+          <label for="fechaExp">Fecha de Experiencia</label>
           <input
             type="text"
             ngModel="{{ editExperiencia?.fechaExp }}"
-            name="imgExp"
+            name="fechaExp"
             class="form-control"
-            id="imgExp1"
-            placeholder="URL de imagen"
+            id="fechaExp1"
+            placeholder="2022-2023 o 06/22-06/23"
           />
         </div>
         <div class="modal-footer">

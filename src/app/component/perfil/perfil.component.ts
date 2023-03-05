@@ -70,6 +70,17 @@ export class PerfilComponent {
   }
 
 
+  onFileSelected(event: { target: { files: File[]; }; }) {
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+  
+    reader.onload = (e: any) => {
+      const imageSrc = e.target.result;
+      // Aquí puedes hacer lo que desees con la ruta de la imagen, como guardarla en "assets"
+    };
+  
+    reader.readAsDataURL(file);
+  }
 
   /* @ViewChild('content') content!: ElementRef;
 

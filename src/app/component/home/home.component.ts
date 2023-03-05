@@ -13,7 +13,7 @@ export class HomeComponent {
 
     @ViewChild('content') content!: ElementRef;
 
-  descargarPDF() {
+descargarPDF() {
     const doc = new jsPDF('p', 'mm', 'a4');
     const content = this.content.nativeElement;
     html2canvas(content).then(canvas => {
@@ -24,5 +24,9 @@ export class HomeComponent {
     doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
       doc.save('cv.pdf');
     });
-  } 
+  }   
+  
+  
+  
+  
 }
