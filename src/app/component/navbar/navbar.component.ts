@@ -14,32 +14,41 @@ declare var bootstrap: any;
 export class NavbarComponent{
   username = '';
   password = '';
+/*   isLoggedIn = false; */
 
 
   @ViewChild('loginForm', { static: false })
   loginForm = new NgForm([], []);
 
 
-  constructor(private authService: AutenticacionService,
+  constructor(public authService: AutenticacionService,
     private router: Router
     ) {}
 
-  login(): void {
+
+    login(): void {
+      const success = this.authService.login('admin@admin.com', 'admin');
+      if (success) {
+        console.log('Sesión iniciada');
+      }
+    }
+  
+    logout(): void {
+      this.authService.logout();
+      console.log('Sesión cerrada');
+    }
+  /* login(): void {
     const success = this.authService.login(this.username, this.password);
     if (success) {
       console.log("sesion iniciada");
-      this.loginForm.resetForm(); // reinicia el formulario después de enviarlo
-      this.router.navigate(['/home']);
-    }
+     }
   }
 
-  isLoggedIn(): boolean {
-    return this.authService.isLogged();
-  }
+ 
 
   logOut(): void {
     return this.authService.logout();
-  }
+  } */
 
   
 }

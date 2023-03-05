@@ -12,12 +12,12 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <li class="nav-item" *ngIf="!authService.isLoggedIn">
+            <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
               iniciar sesion
             </button>
           </li>
-            <button type="submit" class="btn btn-secondary" (click)="logOut()">Cerrar</button>
+            <button  type="submit" class="btn btn-secondary" (click)="logout()">Cerrar</button>
         </ul>
       </div>
     </nav>

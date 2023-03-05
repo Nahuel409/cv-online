@@ -9,7 +9,7 @@
               class="fotoPerfil">
           <div class="descripcion__info">
               <h2>{{info.nombre}} {{info.apellido}}</h2>
-              <button  *ngIf="isLoggedIn" id="boton-oculto" class="btn btn-primary Edit"
+              <button  *ngIf="authService.isLoggedIn" id="boton-oculto" class="btn btn-primary Edit"
               (click)="onOpenModal('edit', info)" data-bs-toggle="modal" data-bs-target="#editInfoModal">
              Editar Perfil <!-- click edit -->
               </button>

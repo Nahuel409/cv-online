@@ -17,19 +17,17 @@ export class PerfilComponent {
   public editInfo: Usuario | undefined;
 
   constructor(
-    private headerService: PerfilService,
-    private authService: AutenticacionService
+    public authService: AutenticacionService,
+    private headerService: PerfilService
   ) { }
-
-
+  
+ 
 
   ngOnInit() {
     this.getInfo();
   }
 
-  isLoggedIn(): boolean {
-    return this.authService.isLogged();
-  }
+ 
   
   public getInfo(): void {
     this.headerService.getInfo().subscribe({
