@@ -11,6 +11,7 @@ import { ProyectoComponent } from './component/proyecto/proyecto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { HomeComponent } from './component/home/home.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './component/home/home.component';
     ProyectoComponent,
     NavbarComponent,
     HomeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

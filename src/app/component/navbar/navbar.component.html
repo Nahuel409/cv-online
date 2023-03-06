@@ -1,26 +1,79 @@
 <header id="welcome-section">
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Cv Online</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Inicio</a>
+<!-- prueba -->
+  <nav class="navbar navbar-expand-md bg-dark">
+    <div class="container-fluid">
+    <!-- icono o nombre -->
+  
+    <a class="navbar-brand" href="/home">
+      <span class="text-light">CV-online</span>
+    </a>
+         <ul class="navbar-nav">
+          <li class="nav-item" *ngIf="!authService.isLoggedIn">
+            <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              iniciar sesion
+            </button>
           </li>
-        </ul>
-        <ul class="navbar-nav">
+            <button *ngIf="authService.isLoggedIn" type="submit" class="btn btn-danger" (click)="logout()">Cerrar</button>
+        </ul> 
+
+
+    <!-- boton del menu -->
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+      <!-- elementos del menu colapsable -->
+  
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          
+        </li>
+      </ul>
+  
+      <hr class="d-md-none text-white-50">
+  
+       <!-- enlaces redes sociales -->
+  
+      <ul class="navbar-nav  flex-row flex-wrap text-light">
+  
+        <li class="nav-item col-6 col-md-auto p-3">
+            <a href="https://www.linkedin.com/in/diegovillan/" target="_blank" class="link-light" id="link-home">
+            Linkedin</a>
+        </li>
+  
+        <li class="nav-item col-6 col-md-auto p-3">
+          <a href="https://github.com/Nahuel409" target="_blank" class="link-light">
+          GitHub</a>
+          <small class="d-md-none ms-2"></small> 
+        </li>
+
+        <li class="nav-item col-6 col-md-auto p-3">
+          <a href="https://nahuel409.github.io/Portfolio-DiegoVillan/" target="_blank" class="link-light">
+         Contact</a>
+          <small class="d-md-none ms-2"></small>
+        </li>
+  
+      </ul>
+      
+     <!--boton Informacion -->
+    </div>
+  
+    </div>  
+  </nav>
+
+<!-- prueba fin -->
+
+      <!--   <ul class="navbar-nav">
           <li class="nav-item" *ngIf="!authService.isLoggedIn">
             <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
               iniciar sesion
             </button>
           </li>
             <button  type="submit" class="btn btn-secondary" (click)="logout()">Cerrar</button>
-        </ul>
-      </div>
-    </nav>
+        </ul> -->
+   
 
   
     
