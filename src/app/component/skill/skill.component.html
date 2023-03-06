@@ -12,7 +12,7 @@
       </div>
       <div class="row" *ngFor="let skill of skills">
         <div class="mb-4">
-          <p>{{skill.tituloSkill}}</p>
+          <p class="mb-0">{{skill.tituloSkill}}</p>
           <div *ngIf="autenticacionService.isLoggedIn">
             <button class="Edit me-2" (click)="onOpenModal('edit',skill)"><i class="fa-solid fa-pen"></i> 
             </button>
@@ -213,3 +213,6 @@
     </div>
   </div>
 </div>
+
+
+

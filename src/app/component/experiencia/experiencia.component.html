@@ -24,7 +24,7 @@
   </div>
   </section> -->
 
-  <section class="py-5">
+  <section class="py-0 mb-0">
     <div class="container">
         <div class="contenedor__barraTitulo">
             <h2>Experiencia</h2>
@@ -33,10 +33,10 @@
            <i class="fa-solid fa-plus"></i>
           </button> 
           </div>
-      <div class="row" *ngFor="let experiencia of experiencias">
-        <div class="col-md-12 border-0">
-          <div class="card mb-4 border-0">
-            <div class="card-body border-0">
+      <div class="row py-0" *ngFor="let experiencia of experiencias">
+        <div class="col-md-12 border-0 py-0">
+          <div class="card mb-4 border-0 py-0">
+            <div class="card-body border-0 py-0">
               <h5 class="card-title">{{experiencia.tituloExp}}</h5>
               <p class="card-text">{{experiencia.descExp}}</p>
               <p class="card-text"><small class="text-muted">{{experiencia.fechaExp}}</small></p>
