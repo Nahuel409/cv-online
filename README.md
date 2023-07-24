@@ -1,4 +1,4 @@
-<h1 align="center">CV Online</h1>
+<h1 align="center">CV Online.</h1>
 <p align="center">
   Este es un proyecto de CV online que te permite crear un CV personal desde la web y descargarlo en formato PDF.
 </p>
